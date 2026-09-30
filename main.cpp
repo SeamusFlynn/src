@@ -62,9 +62,7 @@ TileColor classifyTileColor(double hue, double bright) {
   // if (bright < BRIGHT_LOW) {
   //   return BLACK;
   // }
-  // if (hue > redHue.min || hue < redHue.max) {
-  //   return RED;
-  // }
+
   if (hue > greenHue.min && hue < greenHue.max) {
     return GREEN;
   }
@@ -73,6 +71,9 @@ TileColor classifyTileColor(double hue, double bright) {
   }
   if (hue > yellowHue.min && hue < yellowHue.max) {
     return YELLOW;
+  }
+  if (hue > redHue.min || hue < redHue.max) {
+    return RED;
   }
   return WHITE;
 }

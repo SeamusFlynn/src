@@ -83,7 +83,7 @@ void init() {
 Action mapCell(bool wallFront, TileColor color, Cell *cell) {
   static int loop = 0;
   loop = (loop + 1) % 4;
-  if ((loop != 3) && (cell->type == TILE_UNKNOWN)) {
+  if ((loop <= 3) && (cell->type == TILE_UNKNOWN)) {
     cell->x = x;
     cell->y = y;
     updateWall(cell, wallFront);
